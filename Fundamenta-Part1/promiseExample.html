@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Promises  are used to handle async opertaion in javascript
+    //  How code work before promise and after promise
+    //ex:ecommerce website
+    const cart = ["shoes", "pants", "kurta"];
+    //suppose 2 apis
+    // createOrder(cart);//Takes the cart to the api and return orderID->create order
+    // proceedToPayment(orderId);
+    //These 2 api are asyn,and dependent on each other
+    // createOrder(cart,function(){
+    //     proceedToPayment(orderId)
+
+    // })
+    // //here pass the callback function to create order api and blindly trusting createOrderAPi,and this createApi would have called whenever want In this code have issue inversion of control,
+
+
+    //After promise
+
+    // const promise=createOrder(cart);//when this line executed ,createOrder return promise and promise will shows empty object {} and {data:undefined },once it runs some seconds then it shows {data:details}
+    // promise.then(function (orderId)
+    // {
+    //     proceedToPayment(orderId);
+    // })
+    //We attaching the callback function to a promise object,but here we control of our progra with us
+    //craeteapi create order and fill the data to promise and filled with data,as soon as object filled that data,automatically call the callback function,Promise gives us trust and guarntee that callback function call whenever the data is there inside the promise object.It call once only
+
+    // const url = "https://jsonplaceholder.typicode.com/posts";
+    // const user = fetch(url);
+    // console.log(user);
+    // user.then(function (data) {
+    //     console.log(data);
+    // })
+
+
+
+
+</script>
+<script src="script2.js"></script>
+
+</html>
